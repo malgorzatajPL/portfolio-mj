@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.slick-dots {
+  bottom:-50px;
+}
+
 .slick-dots li.slick-active div {
     background-color: #dc2626 !important;  
     transform: scale(1.2);  

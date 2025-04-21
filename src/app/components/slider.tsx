@@ -41,7 +41,7 @@ const SliderSection = () => {
     slidesToScroll: 1,
     appendDots: (dots: React.ReactNode) => (
       <div>
-        <ul className="flex justify-center space-x-2 mt-12">{dots}</ul> {/* Zwiększona odległość między sliderem a kropkami */}
+        <ul className="flex justify-center space-x-2 mt-12">{dots}</ul> 
       </div>
     ),
     customPaging: () => (
