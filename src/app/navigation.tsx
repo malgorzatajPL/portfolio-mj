@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,7 @@ export default function HamburgerMenu() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
- 
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -40,7 +41,7 @@ export default function HamburgerMenu() {
         aria-label="Toggle menu"
       >
         <Menu size={40} />
-      </button> 
+      </button>
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -50,7 +51,6 @@ export default function HamburgerMenu() {
             transition={{ duration: 0.2 }}
             className="fixed inset-0 bg-white flex flex-col items-center justify-center gap-6 text-xl shadow-lg"
           >
-            {/* Zamykający X wewnątrz menu */}
             <button
               onClick={closeMenu}
               className="absolute top-4 right-4 p-2 text-gray-600 hover:text-black"
@@ -59,10 +59,18 @@ export default function HamburgerMenu() {
               <X size={28} />
             </button>
 
-            <a href="#home" onClick={closeMenu} className="text-gray-800 hover:underline">Home</a>
-            <a href="#about" onClick={closeMenu} className="text-gray-800 hover:underline">About</a>
-            <a href="#services" onClick={closeMenu} className="text-gray-800 hover:underline">Services</a>
-            <a href="#contact" onClick={closeMenu} className="text-gray-800 hover:underline">Contact</a>
+            <Link href="/" passHref>
+              <span onClick={closeMenu} className="text-gray-800 hover:underline cursor-pointer">Home</span>
+            </Link>
+            <Link href="/about" passHref>
+              <span onClick={closeMenu} className="text-gray-800 hover:underline cursor-pointer">About</span>
+            </Link>
+            <Link href="/services" passHref>
+              <span onClick={closeMenu} className="text-gray-800 hover:underline cursor-pointer">Services</span>
+            </Link>
+            <Link href="/contact" passHref>
+              <span onClick={closeMenu} className="text-gray-800 hover:underline cursor-pointer">Contact</span>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>
