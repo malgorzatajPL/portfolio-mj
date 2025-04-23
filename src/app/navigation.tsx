@@ -64,10 +64,7 @@ export default function HamburgerMenu() {
             </Link>
             <Link href="/about" passHref>
               <span onClick={closeMenu} className="text-gray-800 hover:underline cursor-pointer">About</span>
-            </Link>
-            <Link href="/services" passHref>
-              <span onClick={closeMenu} className="text-gray-800 hover:underline cursor-pointer">Services</span>
-            </Link>
+            </Link> 
             <Link href="/contact" passHref>
               <span onClick={closeMenu} className="text-gray-800 hover:underline cursor-pointer">Contact</span>
             </Link>
