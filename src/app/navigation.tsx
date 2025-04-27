@@ -36,12 +36,13 @@ export default function HamburgerMenu() {
   return (
     <div className="fixed top-4 right-4 z-50" ref={menuRef}>
       <button
-        className="p-2 text-white rounded-md focus:outline-none"
+        className="p-2 bg-white border border-gray-300 rounded-full shadow-sm text-gray-800 hover:bg-gray-100 transition"
         onClick={toggleMenu}
         aria-label="Toggle menu"
       >
-        <Menu size={40} />
+        <Menu size={32} />
       </button>
+
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -60,13 +61,13 @@ export default function HamburgerMenu() {
             </button>
 
             <Link href="/" passHref>
-              <span onClick={closeMenu} className="text-gray-800 hover:underline cursor-pointer">Home</span>
+              <span onClick={closeMenu} className="text-gray-800 hover:text-red-700 font-semibold cursor-pointer transition">Home</span>
             </Link>
             <Link href="/about" passHref>
-              <span onClick={closeMenu} className="text-gray-800 hover:underline cursor-pointer">About</span>
-            </Link> 
+              <span onClick={closeMenu} className="text-gray-800 hover:text-red-700 font-semibold cursor-pointer transition">About</span>
+            </Link>
             <Link href="/contact" passHref>
-              <span onClick={closeMenu} className="text-gray-800 hover:underline cursor-pointer">Contact</span>
+              <span onClick={closeMenu} className="text-gray-800 hover:text-red-700 font-semibold cursor-pointer transition">Contact</span>
             </Link>
           </motion.div>
         )}
